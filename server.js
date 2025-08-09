@@ -6,7 +6,12 @@ const generateResponse = require('./src/service/ai.service');
 const { text } = require('body-parser');
 
 const httpServer = createServer(app);
-const io = new Server(httpServer, {});
+const io = new Server(httpServer, {
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+});
 
 const chatHistory = [];
 console.log("chat history", chatHistory);
