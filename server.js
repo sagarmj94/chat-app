@@ -2,6 +2,7 @@ require('dotenv').config();
 const app = require('./src/app');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
+const cors = require('cors');
 const generateResponse = require('./src/service/ai.service');
 const { text } = require('body-parser');
 
